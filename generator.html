@@ -25,7 +25,7 @@
     <button class="l" onclick="c()">Copy</button>
     <script>
       function check(url) {
-        const chk = ['<', '>', '@', '[', ']', 'javascript:', '"', "'"];
+        const chk = ['<', '>', '@', '[', ']', 'javascript:', '"', "'", ' '];
         if (!url) return 'empty';
         if (!url.includes('://')) return 'err';
         for (const char of chk) {
