@@ -10,7 +10,7 @@
   <body onload="location.href=q()">
     <script>
       function q() {
-        const check = ['<', '>', '@', '[', ']', 'javascript:', '"', "'"];
+        const check = ['<', '>', '@', '[', ']', 'javascript:', '"', "'", ' '];
         const urlParams = new URLSearchParams(window.location.search);
         const q = urlParams.get('r');
         if (!q) return 'null';
