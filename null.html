@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://070ry.pages.dev/assets/css/global.css" />
+    <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css" />
+    <link rel="stylesheet" href="table.css" />
     <meta name="theme-color" content="#0f1124" />
     <title>Redirector</title>
   </head>
@@ -27,7 +29,29 @@
       <code>"</code>, <code>'</code> <br /><br />
       プロトコル名+://が含まれていない場合も同様です。<br />
     </p>
-
-    <p><a href="generator" class="b">URL Generator</a></p>
+    <h2>エイリアス一覧</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th scope="col">エイリアス</th>
+        <th scope="col">置き換え後</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>yt://</td>
+        <td>https://youtube.com/watch?q=</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>dsc://</td>
+        <td>https://discord.com/invite/</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>gh://</td>
+        <td>https://github.com/</td>
+      </tr>
+    </table>
+    <p><a href="generator">URL Generator</a></p>
   </body>
 </html>

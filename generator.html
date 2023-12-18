@@ -25,7 +25,7 @@
     <button class="l" onclick="c()">Copy</button>
     <script>
       function check(url) {
-        const chk = ['<', '>', '@', '[', ']', 'javascript:', '"', "'", ' '];
+        const chk = ['<', '>', '@', '[', ']', 'javascript:', '"', "'"];
         if (!url) return 'empty';
         if (!url.includes('://')) return 'err';
         for (const char of chk) {
@@ -48,7 +48,11 @@
           document.getElementById('help').classList.add('h');
         }
         if (result === 'ok') {
-          var generatedUrl = 'https://' + location.hostname + '?r=' + url;
+          var q = url
+            .replace('yt://', 'https://youtube.com/watch?q=')
+            .replace('dsc://', 'https://discord.com/invite/')
+            .replace('gh://', 'https://github.com/');
+          var generatedUrl = 'https://' + location.hostname + '?r=' + q;
           output.textContent = generatedUrl;
           document.getElementById('help').classList.add('h');
         }
