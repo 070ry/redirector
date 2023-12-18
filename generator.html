@@ -51,7 +51,8 @@
           var q = url
             .replace('yt://', 'https://youtube.com/watch?q=')
             .replace('dsc://', 'https://discord.com/invite/')
-            .replace('gh://', 'https://github.com/');
+            .replace('gh://', 'https://github.com/')
+            .replace('ggrks://', 'https://google.com/search?q=');
           var generatedUrl = 'https://' + location.hostname + '?r=' + q;
           output.textContent = generatedUrl;
           document.getElementById('help').classList.add('h');
