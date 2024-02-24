@@ -23,36 +23,10 @@ function gen() {
         output.href = '#';
         document.getElementById('help').classList.add('h');
     } else if (result === 'ok') {
-
-
-        output.textContent = 'https://' + location.hostname + '?r=' + encodeURIComponent(replace(url))
-        output.href = 'https://' + location.hostname + '?r=' + encodeURIComponent(replace(url));
-        document.getElementById('help').classList.add('h');
+        output.textContent = 'https://' + location.hostname + '?r=' + encodeURIComponent(url)
+        output.href = 'https://' + location.hostname + '?r=' + encodeURIComponent(url);
+        document.getElementById('help').classList.add('h')
     }
-}
-function replace(query) {
-    return query
-        .split(' ')
-        .join('+')
-        .replace(/(gh:\/\/|dsc:\/\/|g:\/\/|mc:\/\/|play:\/\/|yt:\/\/|ytc:\/\/)([\w\W]*)/g, (match, p1, p2) => {
-            let encodedP2 = encodeURIComponent(p2);
-            switch (p1) {
-                case 'gh://':
-                    return 'https://github.com/' + encodedP2;
-                case 'dsc://':
-                    return 'https://discord.com/invite/' + encodedP2;
-                case 'g://':
-                    return 'https://google.com/search?q=' + encodedP2;
-                case 'mc://':
-                    return 'minecraft://' + encodedP2;
-                case 'play://':
-                    return 'https://play.google.com/store/apps/details?id=' + encodedP2;
-                case 'yt://':
-                    return 'https://youtube.com/watch?v=' + encodedP2;
-                case 'ytc://':
-                    return 'https://youtube.com/+' + encodedP2;
-            }
-        })
 }
 function c() {
     const o = document.getElementById('output');
