@@ -1,5 +1,0 @@
-output/
-*.json
-*_modules/
-*.test.*
-*.min.*
