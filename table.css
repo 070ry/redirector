@@ -8,6 +8,7 @@ table {
 
 th,
 td {
+  user-select: text;
   border: 1px solid #ffffff46;
   padding: 8px;
   font-family: monospace;

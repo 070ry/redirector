@@ -1,6 +1,5 @@
 output/
 *.json
-*.js
 *_modules/
 *.test.*
 *.min.*

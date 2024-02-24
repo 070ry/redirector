@@ -7,27 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Redirector</title>
   </head>
-  <body onload="location.href=q()">
-    <script>
-      function q() {
-        const check = ['<', '>', '@', '[', ']', 'javascript:', '"', "'", ' '];
-        const urlParams = new URLSearchParams(window.location.search);
-        const q = urlParams.get('r');
-        if (!q) return 'null';
-        if (!q.includes('://')) 'null';
-        for (const char of check) {
-          if (q.includes(char)) {
-            var result = q
-              .replace('yt://', 'https://youtube.com/watch?q=')
-              .replace('dsc://', 'https://discord.com/invite/')
-              .replace('gh://', 'https://github.com/')
-              .replace('ggrks://', 'https://google.com/search?q=')
-              .replace('play://', 'https://play.google.com/store/apps/details?id=');
-            return 'null';
-          }
-        }
-        return q;
-      }
-    </script>
+  <body>
+    <p>Redirecting...</p>
+    <script src="index.js" type="module"></script>
   </body>
 </html>
