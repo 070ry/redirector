@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://070ry.pages.dev/assets/css/global.css" />
+    <meta name="theme-color" content="#0f1124" />
+    <style>
+      .h {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+      }
+      a,
+      a:visited {
+        color: white;
+      }
+    </style>
+    <title>Redirector</title>
+  </head>
+  <body>
+    <h2>URL Generator</h2>
+    <input id="url" class="l" placeholder="Enter URL Here" onkeydown="gen()" onchange="gen()" />
+    <p><a id="output">URLを入力するとここに生成されたリンクが表示されます</a></p>
+    <p id="help" class="h">
+      <a href="null" class="b">詳細については、ヘルプページをご覧ください。</a>
+    </p>
+    <button class="l" onclick="c()">Copy</button>
+    <script src="generator.js"></script>
+  </body>
+</html>

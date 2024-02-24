@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://070ry.pages.dev/assets/css/global.css" />
+    <meta name="theme-color" content="#0f1124" />
+    <title>Redirector</title>
+    <link rel="stylesheet" href="mc.css" />
+  </head>
+  <body>
+    <form onsubmit="event.preventDefault(); get();">
+      <input class="l i" type="text" id="username" placeholder="username" value="Steve" required />
+      <input class="l i" type="number" id="size" placeholder="size" value="128" required /><br />
+      <input type="submit" value="Get" class="l btn" />
+    </form>
+    <img id="result" src="" /><br />
+    <a id="dl" download="" class="l" href="#" style="visibility: hidden">Download</a>
+    <script>
+      function get() {
+        const username = document.getElementById('username').value;
+        const size = document.getElementById('size').value;
+        fetch(`https://cravatar.eu/helmavatar/${username}/${size}.png`)
+          .then((response) => {
+            if (response.ok) {
+              return response.blob();
+            }
+            throw new Error('Network response was not ok.');
+          })
+          .then((blob) => {
+            const imageUrl = URL.createObjectURL(blob);
+            console.log(imageUrl);
+            document.getElementById('result').src = imageUrl;
+            document.getElementById('dl').download = `${username}_${size}`;
+            document.getElementById('dl').href = imageUrl;
+            document.getElementById('dl').style.visibility = 'visible';
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            alert(error);
+          });
+      }
+    </script>
+  </body>
+</html>
